@@ -1,11 +1,24 @@
-# LibraryApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+# form_structure_example
 
-## Development server
+This is a simple project written with Angular 17.3.8. The project includes the use of Bootstrap and PrimeNG. Examples of Template Driven Form and Reactive Form structures are provided in Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#### Install this project
 
-## Build
+1) `https://github.com/hduru/form_structure_example.git`
+2) `cd form_structure_example`
+3) `npm install`
+4) `ng serve`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Then open http://localhost:4200/ to see example.
+
+> Before pulling the project, make sure to install Angular CLI from [https://www.npmjs.com/package/@angular/cli](https://www.npmjs.com/package/@angular/cli).
+
+#### Dependency
+
+* [PrimeNG](https://primeng.org/)
+* [Bootstrap](https://getbootstrap.com/)
+
+#### Reference
+
+* [Angular 17](https://v17.angular.io/docs)
