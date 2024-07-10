@@ -1,0 +1,14 @@
+<form [formGroup]="formGroup">
+    <div class="form-group">
+        <label for="labelName">Book Name</label>
+        <input type="text" class="form-control" id="inputName" placeholder="Name" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="labelName">Author</label>
+        <input type="text" class="form-control" id="inputAuthor" placeholder="Author" formControlName="author">
+    </div>
+    <br>
+    <p>
+        <button type="submit" style="float: right;" class="btn btn-primary" (click)="onSubmit(formGroup.value)" >Submit</button>
+    </p>
+</form>

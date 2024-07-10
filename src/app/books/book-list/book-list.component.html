@@ -1,0 +1,81 @@
+<div>
+  <h1>Books</h1>
+  <br />
+  <div style="display: flex; float: right; text-align: end">
+    <div class="form-group" style="flex: 2; margin-right: 1em">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search"
+        [(ngModel)]="searchKey"
+        (keyup.enter)="keyUpForEnterClick($event)"
+      />
+    </div>
+    <div style="flex: 1; text-align: center">
+      <button type="button" class="btn btn-info" (click)="changedName()">
+        Change
+      </button>
+    </div>
+  </div>
+  <br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of copyBookList; track $index) {
+      <tr>
+        <td>
+          <button type="button" class="btn btn-info" (click)="editBook(item)">
+            Edit
+          </button>
+        </td>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.author }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+  <!--<div *ngIf="openModal" class="modal fade show" style="display: block; padding-left: 0;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Book</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-book-form [book]="selectedBook" (closeModal)="handleCloseModal()"></app-book-form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!--Aşağıdaki örnekte olduğu gibi header tanımlasında [] veya () parantez yok
+  yani binding yapmayacağım için boşolabilir -->
+
+    <p-dialog
+      header="Edit Book"
+      [(visible)]="openModal"
+      [modal]="true"
+      [style]="{ width: '25rem' }"
+    >
+      <!-- <app-book-form *ngIf="openModal" [book]="selectedBook" (closeModal)="handleCloseModal()"></app-book-form> -->
+      <!-- <app-book-form-reactive *ngIf="openModal" [book]="selectedBook" (closeModal)="handleCloseModal()"></app-book-form-reactive> -->
+      <app-book-form-dynamic-reactive *ngIf="openModal" [book]="selectedBook" (closeModal)="handleCloseModal($event)"></app-book-form-dynamic-reactive>
+    </p-dialog>
+    <p-toast></p-toast>
+</div>
+
+
+<!--
+  ctrl+k+c yorum kısa yol
+  ctrl+k+u yorumu aç kısa yol
+-->
